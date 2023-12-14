@@ -1,0 +1,37 @@
+﻿<Window x:Class="Kurs22semestr.Windowses.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kurs22semestr.Windowses"
+        mc:Ignorable="d"
+        Title="Main" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="379*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Height="55" Grid.Row="0">
+            <Menu Height="55" VerticalAlignment="Top">
+                <MenuItem Header="Insert" Height="55" Width="55" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center">
+                    <MenuItem Header="Запись техники" Click="InsertTechnical"></MenuItem>
+                    <MenuItem Header="Запись книги" Click="InsertBook"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Select" Height="55" Width="55">
+                    <MenuItem Header="Вывод списка техники" Click="SelectTechnical"></MenuItem>
+                    <MenuItem Header="Вывод списка книги" Click="SelectBook"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Update" Height="55" Width="55">
+                    <MenuItem Header="Обновление техники"></MenuItem>
+                    <MenuItem Header="Обновление книги"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1">
+            <StackPanel x:Name="MainStackPanel" Orientation="Vertical">
+            </StackPanel>
+        </ScrollViewer>
+        
+
+    </Grid>
+</Window>
