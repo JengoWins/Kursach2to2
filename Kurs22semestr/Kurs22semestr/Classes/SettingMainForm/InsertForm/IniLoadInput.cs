@@ -1,6 +1,5 @@
 ﻿using Kurs22semestr.Classes.BD.InsertBD;
 using Kurs22semestr.Classes.InsertData;
-using Kurs22semestr.Classes.ModelTable;
 using Kurs22semestr.Windowses;
 using System;
 using System.Collections.Generic;

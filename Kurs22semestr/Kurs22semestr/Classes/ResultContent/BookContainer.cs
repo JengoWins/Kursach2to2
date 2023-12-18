@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows;
 using System.Windows.Media;
+using Kurs22semestr.Classes.BD.DeleteBD;
 
 namespace Kurs22semestr.Classes.ResultData
 {
@@ -14,6 +15,7 @@ namespace Kurs22semestr.Classes.ResultData
         private TextBlock pages;
         private TextBlock author;
         private Border br;
+        private Button RemoveBut;
         public BookContainer()
         {
             mainContainer = new StackPanel();
@@ -24,8 +26,29 @@ namespace Kurs22semestr.Classes.ResultData
             pages = new TextBlock();
             author = new TextBlock();
             br = new Border();
+            RemoveBut = new Button();
+            SettingBut();
         }
 
+        private void SettingBut()
+        {
+            RemoveBut.Background = Brushes.Red;
+            RemoveBut.Width = 100;
+            RemoveBut.Height = 25;
+            RemoveBut.Content = "Удалить";
+            RemoveBut.Click += Delete;
+        }
+
+        private void Delete(object sender, RoutedEventArgs e)
+        {
+            BDDeleteBook del = new BDDeleteBook();
+            del.BdConnsOpen();
+            del.DeleteBookWare(articul.Text);
+            del.DeleteBook(articul.Text);
+            del.DeleteBase(articul.Text);
+            del.BdConnsExit();
+            MessageBox.Show("Вы удалили запись");
+        }
         public void SettingName(string n)
         {
             name.Text = n;
@@ -95,6 +118,7 @@ namespace Kurs22semestr.Classes.ResultData
             mainContainer.Children.Add(price);
             mainContainer.Children.Add(author);
             mainContainer.Children.Add(pages);
+            mainContainer.Children.Add(RemoveBut);
             br.BorderThickness = new Thickness(2);
             br.Padding = new Thickness(15);
             br.Margin = new Thickness(10);

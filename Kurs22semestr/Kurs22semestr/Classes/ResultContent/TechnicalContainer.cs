@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows;
 using System.Windows.Media;
+using Kurs22semestr.Classes.BD.DeleteBD;
 
 namespace Kurs22semestr.Classes.ResultData
 {
@@ -17,7 +18,7 @@ namespace Kurs22semestr.Classes.ResultData
         private TextBlock storeg;
         private TextBlock years;
         private Border br;
-
+        private Button RemoveBut;
         public TechnicalContainer()
         {
             mainContainer = new StackPanel();
@@ -31,6 +32,27 @@ namespace Kurs22semestr.Classes.ResultData
             storeg = new TextBlock();
             years = new TextBlock();
             br = new Border();
+            RemoveBut = new Button();
+            SettingBut();
+        }
+        private void SettingBut()
+        {
+            RemoveBut.Background = Brushes.Red;
+            RemoveBut.Width = 100;
+            RemoveBut.Height = 25;
+            RemoveBut.Content = "Удалить";
+            RemoveBut.Click += Delete;
+        }
+
+        private void Delete(object sender, RoutedEventArgs e)
+        {
+            BDDeleteTech del = new BDDeleteTech();
+            del.BdConnsOpen();
+            del.DeleteTechWare(articul.Text);
+            del.DeleteTech(articul.Text);
+            del.DeleteBase(articul.Text);
+            del.BdConnsExit();
+            MessageBox.Show("Вы удалили запись");
         }
 
         public void SettingName(string n)
@@ -133,6 +155,7 @@ namespace Kurs22semestr.Classes.ResultData
             mainContainer.Children.Add(core);
             mainContainer.Children.Add(storeg);
             mainContainer.Children.Add(years);
+            mainContainer.Children.Add(RemoveBut);
             br.BorderThickness = new Thickness(2);
             br.Padding = new Thickness(15);
             br.Margin = new Thickness(10);
