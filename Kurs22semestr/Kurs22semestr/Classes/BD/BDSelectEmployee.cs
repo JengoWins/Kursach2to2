@@ -10,10 +10,10 @@ namespace Kurs22semestr.Classes.BD
     class BDSelectEmployee : BdConnect, InterfasesBDSelect
     {
         MySqlCommand? commands;
-        public bool SelectEmployee(string log)
+        public bool SelectEmployeeAccount(string log)
         {
             bool isTrue = false;
-            string MySqlCode = "SELECT COUNT(*) FROM accounts WHERE nickname=@l";
+            string MySqlCode = "SELECT COUNT(*) FROM accounts WHERE nickname=@l;";
             commands = new MySqlCommand(MySqlCode, conn);
             commands.Parameters.Add("@l", MySqlDbType.VarChar).Value = log;
 
@@ -24,10 +24,10 @@ namespace Kurs22semestr.Classes.BD
             return isTrue;
         }
 
-        public bool SelectEmployee(string log, string pass)
+        public bool SelectEmployeeAccount(string log, string pass)
         {
             bool isTrue = false;
-            string MySqlCode = "SELECT COUNT(*) FROM accounts WHERE nickname=@l and passwords=@p";
+            string MySqlCode = "SELECT COUNT(*) FROM accounts WHERE nickname=@l and passwords=@p;";
             commands = new MySqlCommand(MySqlCode, conn);
             commands.Parameters.Add("@l", MySqlDbType.VarChar).Value = log;
             commands.Parameters.Add("@p", MySqlDbType.VarChar).Value = pass;
@@ -37,18 +37,30 @@ namespace Kurs22semestr.Classes.BD
             }
             return isTrue;
         }
-        /*
-        public DataTable SelectUsers(string log,MySqlConnection conn)
+
+        public string SelectRole(string log)
         {
-            string MySqlCodeID = "SELECT id_DiscriptionUser FROM accounts join users on accounts.id=id_Account WHERE nickname!=@l";
-            string MySqlCode = "SELECT nickname,discription,photo FROM accounts,discriptionuser WHERE nickname!=@l and discriptionuser.id = ("+ MySqlCodeID + ")";
+            string MySqlCode = "select positions from positions where id in (select id_position from accountemp where id_Account in (select id from accounts where nickname = @l));";
             MySqlCommand commands = new MySqlCommand(MySqlCode, conn);
             DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(commands);
             commands.Parameters.Add("@l", MySqlDbType.VarChar).Value = log;
+            adapter.Fill(table);
+            string? result = table.Rows[0][0].ToString();
+
+            return result;
+        }
+        public DataTable SelectEmployee(string log)
+        {
+            string MySqlCode = "select first_name,last_name,father_name,Date_of_birth,salary,positions from employee join positions on employee.id = positions.id where employee.id in( select id_Employee from accountemp where id_Account in (select id from accounts where nickname = @l));";
+            MySqlCommand commands = new MySqlCommand(MySqlCode, conn);
+            commands.Parameters.Add("@l", MySqlDbType.VarChar).Value = log;
+            DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(commands);
             adapter.Fill(table);
+
             return table;
         }
-        */
+      
     }
 }

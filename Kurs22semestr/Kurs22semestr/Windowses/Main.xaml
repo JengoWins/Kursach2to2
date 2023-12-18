@@ -5,33 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kurs22semestr.Windowses"
         mc:Ignorable="d"
-        Title="Main" Height="450" Width="800">
+        Title="Main" Height="768" Width="1290" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="55*"/>
             <RowDefinition Height="379*"/>
         </Grid.RowDefinitions>
-        <StackPanel Height="55" Grid.Row="0">
-            <Menu Height="55" VerticalAlignment="Top">
-                <MenuItem Header="Insert" Height="55" Width="55" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center">
-                    <MenuItem Header="Запись техники" Click="InsertTechnical"></MenuItem>
-                    <MenuItem Header="Запись книги" Click="InsertBook"></MenuItem>
+        <StackPanel Grid.Row="0" Margin="0,0,0,5" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Menu Height="91" Width="1114" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <MenuItem Header="Insert" Height="93" Width="85" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="20">
+                    <MenuItem x:Name="InputsTech" Header="Запись техники" Click="InsertTechnical"></MenuItem>
+                    <MenuItem x:Name="InputsBook" Header="Запись книги" Click="InsertBook"></MenuItem>
                 </MenuItem>
-                <MenuItem Header="Select" Height="55" Width="55">
-                    <MenuItem Header="Вывод списка техники" Click="SelectTechnical"></MenuItem>
-                    <MenuItem Header="Вывод списка книги" Click="SelectBook"></MenuItem>
+                <MenuItem Header="Select" Height="93" Width="85" FontSize="20">
+                    <MenuItem x:Name="SelTech" Header="Вывод списка техники" Click="SelectTechnical"></MenuItem>
+                    <MenuItem x:Name="SelBook" Header="Вывод списка книги" Click="SelectBook"></MenuItem>
                 </MenuItem>
-                <MenuItem Header="Update" Height="55" Width="55">
-                    <MenuItem Header="Обновление техники"></MenuItem>
-                    <MenuItem Header="Обновление книги"></MenuItem>
+                <MenuItem Header="Warehouse" Height="93" Width="110" FontSize="20" Visibility="Hidden">
+                    <MenuItem Header="Обновление техники" Click="UpdateTechnical"></MenuItem>
+                    <MenuItem Header="Обновление книги" Click="UpdateBook"></MenuItem>
                 </MenuItem>
             </Menu>
         </StackPanel>
-        <ScrollViewer Grid.Row="1">
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <StackPanel x:Name="MainStackPanel" Orientation="Vertical">
             </StackPanel>
         </ScrollViewer>
-        
+        <Button x:Name="But_Profile" Content="Button" HorizontalAlignment="Left" Margin="1117,2,0,0" VerticalAlignment="Top" Height="86" Width="171" Click="Profile"/>
+
 
     </Grid>
 </Window>

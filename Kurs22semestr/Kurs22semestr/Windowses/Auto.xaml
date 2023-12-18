@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
         <TextBox x:Name="Login" HorizontalAlignment="Left" Margin="55,55,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="364" FontFamily="Cambria Math" FontSize="20" Grid.Column="1" Grid.Row="1" />
         <PasswordBox x:Name="Password" HorizontalAlignment="Left" VerticalAlignment="Top" Width="364" Margin="55,123,0,0" FontFamily="Cambria Math" FontSize="20" Grid.Column="1" Grid.Row="1"/>
-        <Button Content="Гость" HorizontalAlignment="Center" VerticalAlignment="Center" Height="53" Width="102" Click="Guest" Grid.Row="2"/>
+        <Button Content="Войти как Гость" HorizontalAlignment="Center" VerticalAlignment="Center" Height="53" Width="102" Click="Guest" Grid.Row="2"/>
         <Button Content="Вход" HorizontalAlignment="Center" VerticalAlignment="Center" Height="53" Width="102" Click="InMainWindow" Grid.Column="2" Grid.Row="2"/>
 
     </Grid>

@@ -1,12 +1,14 @@
-﻿using Kurs22semestr.Classes;
-using MasangerRilot.Classes;
+﻿using MasangerRilot.Classes;
 using MySql.Data.MySqlClient;
 using System;
-using System.Xml.Linq;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Kurs22semestr.Classes.BD.InsertBD
 {
-    class BDInsertTechical : BdConnect, InterfasesBDTech
+    class BDInsertBook: BdConnect, InterfasesBDBook
     {
         MySqlCommand? commands;
 
@@ -23,7 +25,7 @@ namespace Kurs22semestr.Classes.BD.InsertBD
             commands.ExecuteNonQuery();
         }
 
-        public void InsertTechical(string series, string systems, int core, int store, int year,string name)
+        public void InsertBook(string author, int pages, string name)
         {
             string MySqlCode0 = "SELECT id FROM basetowar WHERE names=@n";
             int Key = 0;
@@ -38,14 +40,11 @@ namespace Kurs22semestr.Classes.BD.InsertBD
                 }
             }
 
-            string MySqlCode = "INSERT INTO techical (series,systems,core,storeg,years,id_base) " +
-               "VALUES (@se,@sy,@c,@st,@ye,@id)";
+            string MySqlCode = "INSERT INTO book (Autor,pages,id_base) " +
+               "VALUES (@a,@p,@id)";
             commands = new MySqlCommand(MySqlCode, conn);
-            commands.Parameters.Add("@se", MySqlDbType.VarChar).Value = series;
-            commands.Parameters.Add("@sy", MySqlDbType.VarChar).Value = systems;
-            commands.Parameters.Add("@c", MySqlDbType.Int32).Value = core;
-            commands.Parameters.Add("@st", MySqlDbType.Int32).Value = store;
-            commands.Parameters.Add("@ye", MySqlDbType.Int32).Value = year;
+            commands.Parameters.Add("@a", MySqlDbType.VarChar).Value = author;
+            commands.Parameters.Add("@p", MySqlDbType.Int32).Value = pages;
             commands.Parameters.Add("@id", MySqlDbType.Int32).Value = Key;
 
             commands.ExecuteNonQuery();

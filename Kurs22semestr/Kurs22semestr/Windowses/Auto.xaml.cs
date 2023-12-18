@@ -24,7 +24,6 @@ namespace Kurs22semestr.Windowses
         CorrectLogins CorrectLog;
         CorrectPass CorreacPass;
         
-
         public static string? Logins { get; set; }
         public Auto()
         {
@@ -33,6 +32,7 @@ namespace Kurs22semestr.Windowses
 
         private void InMainWindow(object sender, RoutedEventArgs e)
         {
+            
             try
             {
                 CorrectLog = new CorrectLogins(Login.Text);
@@ -41,7 +41,7 @@ namespace Kurs22semestr.Windowses
                 {
                     BDSelectEmployee BDSelectCommand = new BDSelectEmployee();
                     BDSelectCommand.BdConnsOpen();
-                    bool isNext = BDSelectCommand.SelectEmployee(Login.Text, Password.Password);
+                    bool isNext = BDSelectCommand.SelectEmployeeAccount(Login.Text, Password.Password);
                     BDSelectCommand.BdConnsExit();
                     if (isNext)
                     {
@@ -56,6 +56,8 @@ namespace Kurs22semestr.Windowses
             {
                 MessageBox.Show("Произошла ошибка SQL команды." + ex.Message);
             }
+            
+            
         }
 
         private void Guest(object sender, RoutedEventArgs e)

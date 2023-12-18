@@ -23,7 +23,7 @@ namespace Kurs22semestr.Classes.Correct
             select.BdConnsOpen();
             try
             {
-                isBool = select.SelectEmployee(login);
+                isBool = select.SelectEmployeeAccount(login);
                 if (isBool)
                 {
                     MessageBox.Show("Логин совпадает с данными в базе данных." + isBool);

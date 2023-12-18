@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `warehouse` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `warehouse`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: warehouse
@@ -34,7 +36,7 @@ CREATE TABLE `accountemp` (
   CONSTRAINT `accountemp_ibfk_1` FOREIGN KEY (`id_Account`) REFERENCES `accounts` (`id`),
   CONSTRAINT `accountemp_ibfk_2` FOREIGN KEY (`id_Employee`) REFERENCES `employee` (`id`),
   CONSTRAINT `accountemp_ibfk_3` FOREIGN KEY (`id_position`) REFERENCES `positions` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +45,7 @@ CREATE TABLE `accountemp` (
 
 LOCK TABLES `accountemp` WRITE;
 /*!40000 ALTER TABLE `accountemp` DISABLE KEYS */;
-INSERT INTO `accountemp` VALUES (1,1,1,1);
+INSERT INTO `accountemp` VALUES (1,1,1,1),(2,2,2,2),(3,3,3,3);
 /*!40000 ALTER TABLE `accountemp` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-14 21:28:17
+-- Dump completed on 2023-12-18 14:29:08
