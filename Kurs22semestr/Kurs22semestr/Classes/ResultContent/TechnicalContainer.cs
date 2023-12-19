@@ -7,6 +7,8 @@ using System.Windows.Controls;
 using System.Windows;
 using System.Windows.Media;
 using Kurs22semestr.Classes.BD.DeleteBD;
+using Kurs22semestr.Classes.SettingMainForm.InsertForm;
+using Kurs22semestr.Windowses;
 
 namespace Kurs22semestr.Classes.ResultData
 {
@@ -19,6 +21,7 @@ namespace Kurs22semestr.Classes.ResultData
         private TextBlock years;
         private Border br;
         private Button RemoveBut;
+        private Button UpdateBut;
         public TechnicalContainer()
         {
             mainContainer = new StackPanel();
@@ -33,15 +36,23 @@ namespace Kurs22semestr.Classes.ResultData
             years = new TextBlock();
             br = new Border();
             RemoveBut = new Button();
-            SettingBut();
+            UpdateBut = new Button();
         }
-        private void SettingBut()
+        public void SettingBut()
         {
             RemoveBut.Background = Brushes.Red;
             RemoveBut.Width = 100;
             RemoveBut.Height = 25;
+            RemoveBut.Margin = new Thickness(5, 0, 5, 0);
             RemoveBut.Content = "Удалить";
             RemoveBut.Click += Delete;
+
+            UpdateBut.Background = Brushes.AliceBlue;
+            UpdateBut.Width = 100;
+            UpdateBut.Height = 25;
+            UpdateBut.Margin = new Thickness(5, 0, 5, 0);
+            UpdateBut.Content = "Обновить";
+            UpdateBut.Click += Update;
         }
 
         private void Delete(object sender, RoutedEventArgs e)
@@ -53,6 +64,12 @@ namespace Kurs22semestr.Classes.ResultData
             del.DeleteBase(articul.Text);
             del.BdConnsExit();
             MessageBox.Show("Вы удалили запись");
+        }
+        private void Update(object sender, RoutedEventArgs e)
+        {
+            IniLoadUpdate upd = new IniLoadUpdate();
+            Main.mainPanel.Children.Clear();
+            upd.LoadInputTech(Main.mainPanel, name.Text, articul.Text, discript.Text, price.Text, series.Text, systems.Text, core.Text, storeg.Text, years.Text);
         }
 
         public void SettingName(string n)
@@ -140,7 +157,7 @@ namespace Kurs22semestr.Classes.ResultData
         }
 
 
-        public void SettingStack()
+        public void SettingStack(bool isBool)
         {
             //---------------------------------
             mainContainer.Orientation = Orientation.Horizontal;
@@ -155,7 +172,11 @@ namespace Kurs22semestr.Classes.ResultData
             mainContainer.Children.Add(core);
             mainContainer.Children.Add(storeg);
             mainContainer.Children.Add(years);
-            mainContainer.Children.Add(RemoveBut);
+            if (isBool && Auto.Logins != "Guest")
+            {
+                mainContainer.Children.Add(RemoveBut);
+                mainContainer.Children.Add(UpdateBut);
+            }
             br.BorderThickness = new Thickness(2);
             br.Padding = new Thickness(15);
             br.Margin = new Thickness(10);

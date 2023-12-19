@@ -39,7 +39,7 @@ namespace Kurs22semestr.Classes.BD.InsertBD
                 }
             }
 
-            string MySqlCode = "INSERT INTO warehousetech (id_towar,id_employee,count,category_zone) " +
+            string MySqlCode = "INSERT INTO warehousebook (id_towar,id_employee,count,category_zone) " +
                "VALUES (@k1,@k2,@c,@cat)";
             commands = new MySqlCommand(MySqlCode, conn);
             commands.Parameters.Add("@k1", MySqlDbType.VarChar).Value = KeyTowar;

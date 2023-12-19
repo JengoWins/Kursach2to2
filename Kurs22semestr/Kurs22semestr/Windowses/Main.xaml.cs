@@ -18,10 +18,11 @@ namespace Kurs22semestr.Windowses
     /// </summary>
     public partial class Main : Window
     {
-
+        public static StackPanel? mainPanel;
         public Main()
         {
             InitializeComponent();
+            mainPanel = MainStackPanel;
             BDSelectEmployee emp = new BDSelectEmployee();
             string role = "";
             if (Auto.Logins != "Guest")

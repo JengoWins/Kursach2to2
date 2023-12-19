@@ -13,19 +13,18 @@ namespace Kurs22semestr.Classes.SettingMainForm.InsertForm
 {
     class IniLoadInput
     {
-
-        BlockInput inputTech1;
-        BlockInput inputTech2;
-        BlockInput inputTech3;
-        BlockInput inputTech4;
-        BlockInput inputTech5;
-        BlockInput inputTech6;
-        BlockInput inputTech7;
-        BlockInput inputTech8;
-        BlockInput inputTech9;
+        protected BlockInput inputTech1;
+        protected BlockInput inputTech2;
+        protected BlockInput inputTech3;
+        protected BlockInput inputTech4;
+        protected BlockInput inputTech5;
+        protected BlockInput inputTech6;
+        protected BlockInput inputTech7;
+        protected BlockInput inputTech8;
+        protected BlockInput inputTech9;
         //------------------
-        BlockInput inputTech10;
-        BlockInput inputTech11;
+        protected BlockInput inputTech10;
+        protected BlockInput inputTech11;
 
         public IniLoadInput() {
             inputTech1 = new BlockInput();
@@ -108,7 +107,7 @@ namespace Kurs22semestr.Classes.SettingMainForm.InsertForm
             MainStackPanel.Children.Add(but);
         }
 
-        private void But_ClickTech(object sender, RoutedEventArgs e)
+        protected void But_ClickTech(object sender, RoutedEventArgs e)
         {
             BDInsertTechical insertTowar = new BDInsertTechical();
             BDInsertWareTech insertWarehouse = new BDInsertWareTech();
@@ -174,7 +173,7 @@ namespace Kurs22semestr.Classes.SettingMainForm.InsertForm
             MainStackPanel.Children.Add(but);
         }
 
-        private void But_ClickBook(object sender, RoutedEventArgs e)
+        protected void But_ClickBook(object sender, RoutedEventArgs e)
         {
             BDInsertBook insert = new BDInsertBook();
             BDInsertWareBook insertWarehouse = new BDInsertWareBook();

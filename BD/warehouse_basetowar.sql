@@ -31,7 +31,7 @@ CREATE TABLE `basetowar` (
   `discript` varchar(350) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `price` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `basetowar` (
 
 LOCK TABLES `basetowar` WRITE;
 /*!40000 ALTER TABLE `basetowar` DISABLE KEYS */;
-INSERT INTO `basetowar` VALUES (1,'sfd','ads','asd',12),(2,'asd','asd','asd',12),(3,'Траун','1237467','Восхождение Гранд Адмирала Трауна',769),(4,'asbnet','asbnet','asbnet',99999),(5,'Hasbin','Hasbin','Hasbin',1),(6,'GrohSpace','GrohSpace','GrohSpace',12),(7,'HasbinNesh','HasbinNesh','HasbinNesh',12),(8,'Asus ZenFone 4 Selfie Pro ','1153549','5.5\" Смартфон ASUS ZenFone 4 Selfie Pro (ZD552KL) порадует своим дизайном. Выполнено устройство в черном цвете. Это продвинутая модель с отличными характеристиками.',16990);
+INSERT INTO `basetowar` VALUES (10,'Megatron','235679','Megatron - the bad',10000),(12,'Trawn','142353','Восхождение Гранда Адмирала Трауна',749);
 /*!40000 ALTER TABLE `basetowar` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-18 14:29:08
+-- Dump completed on 2023-12-19 20:04:13

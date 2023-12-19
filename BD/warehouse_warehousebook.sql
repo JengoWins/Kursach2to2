@@ -35,7 +35,7 @@ CREATE TABLE `warehousebook` (
   KEY `tow1_idx` (`id_Towar`),
   CONSTRAINT `emp1` FOREIGN KEY (`id_employee`) REFERENCES `employee` (`id`),
   CONSTRAINT `tow1` FOREIGN KEY (`id_Towar`) REFERENCES `book` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,6 +44,7 @@ CREATE TABLE `warehousebook` (
 
 LOCK TABLES `warehousebook` WRITE;
 /*!40000 ALTER TABLE `warehousebook` DISABLE KEYS */;
+INSERT INTO `warehousebook` VALUES (1,3,3,3,1);
 /*!40000 ALTER TABLE `warehousebook` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-18 14:29:09
+-- Dump completed on 2023-12-19 20:04:13

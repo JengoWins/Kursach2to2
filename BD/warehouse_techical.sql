@@ -35,7 +35,7 @@ CREATE TABLE `techical` (
   PRIMARY KEY (`id`),
   KEY `BaseTowar_idx` (`Id_Base`),
   CONSTRAINT `BaseTowar` FOREIGN KEY (`Id_Base`) REFERENCES `basetowar` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `techical` (
 
 LOCK TABLES `techical` WRITE;
 /*!40000 ALTER TABLE `techical` DISABLE KEYS */;
-INSERT INTO `techical` VALUES (1,'asd','ads',12,12,12,1),(2,'asbnet','asbnet',1,12,2010,4),(3,'Hasbin','Hasbin',12,11,2017,5),(4,'GrohSpace','GrohSpace',2,12,2016,6),(5,'12','HasbinNesh',4,5,2000,7),(6,'Asus','Android',8,4,2017,8);
+INSERT INTO `techical` VALUES (8,'SmartTron','android',4,12,2010,10);
 /*!40000 ALTER TABLE `techical` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-18 14:29:08
+-- Dump completed on 2023-12-19 20:04:14

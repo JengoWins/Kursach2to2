@@ -35,7 +35,7 @@ CREATE TABLE `warehousetech` (
   KEY `Empt_idx` (`id_employee`),
   CONSTRAINT `Emp` FOREIGN KEY (`id_employee`) REFERENCES `employee` (`id`),
   CONSTRAINT `Tech` FOREIGN KEY (`id_towar`) REFERENCES `techical` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `warehousetech` (
 
 LOCK TABLES `warehousetech` WRITE;
 /*!40000 ALTER TABLE `warehousetech` DISABLE KEYS */;
-INSERT INTO `warehousetech` VALUES (1,5,1,12,4),(2,6,2,2,1);
+INSERT INTO `warehousetech` VALUES (4,8,2,6,2);
 /*!40000 ALTER TABLE `warehousetech` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-18 14:29:08
+-- Dump completed on 2023-12-19 20:04:13

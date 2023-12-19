@@ -37,6 +37,15 @@ namespace Kurs22semestr.Classes.InsertData
             input.TextWrapping = TextWrapping.Wrap;
             input.Margin = new Thickness(5,0,5,0);
         }
+        public void SettingInput(string n)
+        {
+            input.Text = n;
+            input.Width = 100;
+            input.Height = 100;
+            input.FontSize = 18;
+            input.TextWrapping = TextWrapping.Wrap;
+            input.Margin = new Thickness(5, 0, 5, 0);
+        }
 
         public override void SettingStack()
         {
