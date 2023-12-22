@@ -5,11 +5,103 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kurs22semestr.Windowses"
         mc:Ignorable="d"
-        Title="Auto" Height="450" Width="800">
+        Title="Auto" Height="450" Width="800" Icon="/Windowses/Icon.jpg">
+    <Window.Resources>
+        <Style TargetType="TextBox" x:Key="TextboxStyles">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Foreground" Value="#000"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="MinHeight" Value="20"/>
+            <Setter Property="MinWidth" Value="250"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" CornerRadius="10" BorderBrush="#000" BorderThickness="1" Background="#fff">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="PasswordBox" x:Key="PasswordboxStyles">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Foreground" Value="#000"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="MinHeight" Value="20"/>
+            <Setter Property="MinWidth" Value="250"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border x:Name="border" CornerRadius="10" BorderBrush="#000" BorderThickness="1" Background="#fff">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="ButtonStyle">
+            <Setter Property="Button.Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="#FFE8D286" />
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+
+                <!-- Animates the button's opacity on mouse over. -->
+                <EventTrigger RoutedEvent="Button.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                  Storyboard.TargetProperty="(Button.Opacity)"
+                  From="1.0" To="0.5" Duration="0:0:1.0" AutoReverse="True"
+                  RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+
+                <!-- Returns the button's opacity to 1 when the mouse leaves. -->
+                <EventTrigger RoutedEvent="Button.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                  Storyboard.TargetProperty="(Button.Opacity)"
+                  To="1" Duration="0:0:1.0" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+
+                <!-- Changes the button's color when clicked. 
+             Notice that the animation can't target the
+             SolidColorBrush used to paint the button's background
+             directly. The brush must be accessed through the button's
+             Background property. -->
+                <EventTrigger RoutedEvent="Button.Click">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation 
+                  Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                  From="Orange" To="White" Duration="0:0:0.1" AutoReverse="True" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Windowses/fon-derevo-46.jpg" Stretch="Fill"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="125*"/>
-            <RowDefinition Height="200*"/>
+            <RowDefinition Height="177*"/>
+            <RowDefinition Height="148*"/>
             <RowDefinition Height="109*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -17,10 +109,12 @@
             <ColumnDefinition Width="509*"/>
             <ColumnDefinition Width="156*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="Login" HorizontalAlignment="Left" Margin="55,55,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="364" FontFamily="Cambria Math" FontSize="20" Grid.Column="1" Grid.Row="1" />
-        <PasswordBox x:Name="Password" HorizontalAlignment="Left" VerticalAlignment="Top" Width="364" Margin="55,123,0,0" FontFamily="Cambria Math" FontSize="20" Grid.Column="1" Grid.Row="1"/>
-        <Button Content="Войти как Гость" HorizontalAlignment="Center" VerticalAlignment="Center" Height="53" Width="102" Click="Guest" Grid.Row="2"/>
-        <Button Content="Вход" HorizontalAlignment="Center" VerticalAlignment="Center" Height="53" Width="102" Click="InMainWindow" Grid.Column="2" Grid.Row="2"/>
+        <TextBox Style="{StaticResource TextboxStyles}" BorderThickness="1.2" BorderBrush="Black" x:Name="Login" Width="470" Height="35" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Cambria Math" FontSize="20" Grid.Column="1" Grid.Row="1"/>
+
+        <PasswordBox Style="{StaticResource PasswordboxStyles}" BorderThickness="1.2" BorderBrush="Black"  Width="470" Height="35" x:Name="Password" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,86,0,0" FontFamily="Cambria Math" FontSize="20" Grid.Column="1" Grid.Row="1"/>
+        <Button Style="{StaticResource ButtonStyle}" Content="Войти как гость" HorizontalAlignment="Center" VerticalAlignment="Top" Height="53" Width="102" Click="Guest" Grid.Row="2" Margin="0,23,0,0"/>
+        <Button Style="{StaticResource ButtonStyle}" Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Top" Height="53" Width="102" Click="InMainWindow" Grid.Column="2" Grid.Row="2" Margin="0,23,0,0"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="151" Margin="126,0,0,0" VerticalAlignment="Center" Width="239" Source="/Windowses/Logo.png"/>
 
     </Grid>
 </Window>

@@ -37,7 +37,6 @@ namespace Kurs22semestr.Classes.Correct
                 }
                 else
                 {
-                    Console.WriteLine("Incorrect. Not fount upper character or number in password!");
                     MessageBox.Show("Incorrect. Not fount upper character or number in password!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }

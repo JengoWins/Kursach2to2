@@ -14,7 +14,7 @@ namespace Kurs22semestr.Classes.BD.DeleteBD
 
         public void DeleteBookWare(string name)
         {
-            string MySqlCode = "DELETE FROM warehousebook WHERE id_towar in(SELECT id FROM techical where id_base in (SELECT id FROM basetowar where articul = @n))";
+            string MySqlCode = "DELETE FROM warehousebook WHERE id_towar in(SELECT id FROM book where id_base in (SELECT id FROM basetowar where articul = @n))";
             commands = new MySqlCommand(MySqlCode, conn);
             commands.Parameters.Add("@n", MySqlDbType.VarChar).Value = name;
 

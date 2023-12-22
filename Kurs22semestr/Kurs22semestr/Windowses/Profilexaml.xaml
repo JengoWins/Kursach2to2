@@ -7,15 +7,33 @@
         mc:Ignorable="d"
         Title="Profilexaml" Height="600" Width="600">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Windowses/fon-derevo-46.jpg"/>
+        </Grid.Background>
         <StackPanel x:Name="User">
-            <TextBlock Margin="10" Width="400" Height="50" TextWrapping="Wrap" TextAlignment="Center" Text="Профиль" FontSize="30" TextDecorations="Underline" FontWeight="Bold"/>
-            <TextBlock x:Name="Users" Margin="10" Width="400" Height="50" TextWrapping="Wrap" TextAlignment="Center" FontSize="18"/>
-            <TextBlock x:Name="first_name" Margin="10" Width="400" Height="50" TextWrapping="Wrap" TextAlignment="Center" FontSize="18"></TextBlock>
-            <TextBlock x:Name="last_name" Margin="10" Width="400" Height="50" TextWrapping="Wrap" TextAlignment="Center" FontSize="18"></TextBlock>
-            <TextBlock x:Name="Father_name" Margin="10" Width="400" Height="50" TextWrapping="Wrap" TextAlignment="Center" FontSize="18"></TextBlock>
-            <TextBlock x:Name="Date" Margin="10" Width="400" Height="50" TextWrapping="Wrap" TextAlignment="Center" FontSize="18"></TextBlock>
-            <TextBlock x:Name="Salary" Margin="10" Width="400" Height="50" TextWrapping="Wrap" TextAlignment="Center" FontSize="18"></TextBlock>
-            <TextBlock x:Name="Role" Margin="10" Width="400" Height="50" TextWrapping="Wrap" TextAlignment="Center" FontSize="18"></TextBlock>
+            
+            <TextBlock Margin="10" Width="400" Height="50" TextWrapping="Wrap" TextAlignment="Center" Text="Профиль" FontSize="30" TextDecorations="Underline" FontWeight="Bold" Foreground="White"/>
+            <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10" Background="White" Margin="10" Width="400" Height="50">
+                <TextBlock x:Name="Users" Margin="10" TextWrapping="Wrap" TextAlignment="Center" FontSize="18"/>
+            </Border>
+            <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10" Background="White" Margin="10" Width="400" Height="50">
+                <TextBlock x:Name="first_name" Margin="10" TextWrapping="Wrap" TextAlignment="Center" FontSize="18"></TextBlock>
+            </Border>
+            <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10" Background="White" Margin="10" Width="400" Height="50">
+                <TextBlock x:Name="last_name" Margin="10" TextWrapping="Wrap" TextAlignment="Center" FontSize="18" ></TextBlock>
+            </Border>
+            <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10" Background="White" Margin="10" Width="400" Height="50">
+                <TextBlock x:Name="Father_name" Margin="10" TextWrapping="Wrap" TextAlignment="Center" FontSize="18" ></TextBlock>
+            </Border>
+            <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10" Background="White" Margin="10" Width="400" Height="50">
+                <TextBlock x:Name="Date" Margin="10" TextWrapping="Wrap" TextAlignment="Center" FontSize="18" ></TextBlock>
+            </Border>
+            <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10" Background="White" Margin="10" Width="400" Height="50">
+                <TextBlock x:Name="Salary" Margin="10" TextWrapping="Wrap" TextAlignment="Center" FontSize="18" ></TextBlock>
+            </Border>
+            <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10" Background="White" Margin="10" Width="400" Height="50">
+                <TextBlock x:Name="Role" Margin="10" TextWrapping="Wrap" TextAlignment="Center" FontSize="18" ></TextBlock>
+            </Border>
         </StackPanel>
     </Grid>
 </Window>

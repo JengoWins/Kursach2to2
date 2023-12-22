@@ -8,7 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Windowses\Book.jpeg" />
+    <None Remove="Windowses\fon-derevo-46.jpg" />
+    <None Remove="Windowses\Icon.jpg" />
+    <None Remove="Windowses\Logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Windowses\Book.jpeg" />
+    <Resource Include="Windowses\fon-derevo-46.jpg" />
+    <Resource Include="Windowses\Icon.jpg" />
+    <Resource Include="Windowses\Logo.png" />
   </ItemGroup>
 
 </Project>

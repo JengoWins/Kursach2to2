@@ -9,7 +9,7 @@ using System;
 using System.Data;
 using System.Windows;
 using System.Windows.Controls;
-
+using System.Windows.Media;
 
 namespace Kurs22semestr.Windowses
 {
@@ -53,22 +53,54 @@ namespace Kurs22semestr.Windowses
         {
             MainStackPanel.Children.Clear();
             IniLoadInput loadInput = new IniLoadInput();
+            
+            Borderes.Background = new SolidColorBrush(Color.FromRgb(108, 208, 216));
+            Borderes.BorderThickness = new Thickness(2);
+            Borderes.BorderBrush = Brushes.Black; 
+            Borderes.CornerRadius = new CornerRadius(12);
+            
+            MainStackPanel.Background = Brushes.White;
+
             loadInput.LoadInputTech(MainStackPanel);
         }
         private void InsertBook(object sender, RoutedEventArgs e)
         {
             MainStackPanel.Children.Clear();
             IniLoadInput loadInput = new IniLoadInput();
+            
+            Borderes.Background = new SolidColorBrush(Color.FromRgb(108, 208, 216));
+            Borderes.BorderThickness = new Thickness(2);
+            Borderes.BorderBrush = Brushes.Black;
+            Borderes.CornerRadius = new CornerRadius(12);
+            
+            MainStackPanel.Background = Brushes.White;
+
             loadInput.LoadInputBook(MainStackPanel);
         }
         private void SelectTechnical(object sender, RoutedEventArgs e)
         {
             MainStackPanel.Children.Clear();
+            
+            Borderes.Background = new SolidColorBrush(Color.FromRgb(108, 208, 216));
+            Borderes.BorderThickness = new Thickness(2);
+            Borderes.BorderBrush = Brushes.Black;
+            Borderes.CornerRadius = new CornerRadius(12);
+            
+            MainStackPanel.Background = Brushes.White;
+
             IniLoadSelect load = new IniLoadSelect(MainStackPanel,1);
         }
         private void SelectBook(object sender, RoutedEventArgs e)
         {
             MainStackPanel.Children.Clear();
+            
+            Borderes.Background = new SolidColorBrush(Color.FromRgb(108, 208, 216));
+            Borderes.BorderThickness = new Thickness(2);
+            Borderes.BorderBrush = Brushes.Black;
+            Borderes.CornerRadius = new CornerRadius(12);
+            
+            MainStackPanel.Background = Brushes.White;
+
             IniLoadSelect load = new IniLoadSelect(MainStackPanel, 2);
         }
 
@@ -87,5 +119,6 @@ namespace Kurs22semestr.Windowses
         {
 
         }
+
     }
 }

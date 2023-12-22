@@ -26,11 +26,11 @@ namespace Kurs22semestr.Classes.Correct
                 isBool = select.SelectEmployeeAccount(login);
                 if (isBool)
                 {
-                    MessageBox.Show("Логин совпадает с данными в базе данных." + isBool);
+                    MessageBox.Show("Логин совпадает с данными в базе данных.","Информация", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Логин не совпадает с данными из базы данных. Введите другой логин." + isBool);
+                    MessageBox.Show("Логин не совпадает с данными из базы данных. Введите другой логин.","Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             catch (Exception ex)

@@ -15,7 +15,6 @@ namespace Kurs22semestr.Classes.SettingMainForm.InsertForm
 {
     class IniLoadUpdate : IniLoadInput
     {
-        private Button but;
         private string articul;
         public IniLoadUpdate()
         {
@@ -92,9 +91,9 @@ namespace Kurs22semestr.Classes.SettingMainForm.InsertForm
                 MainStackPanel.Children.Add(inputTech11.Result());
 
                 but.Width = 100;
-                but.Height = 100;
+                but.Height = 50;
                 but.Content = "Обновить";
-
+                but.Margin = new Thickness(5);
                 but.Click += But_ClickTech;
                 MainStackPanel.Children.Add(but);
             }
@@ -159,9 +158,9 @@ namespace Kurs22semestr.Classes.SettingMainForm.InsertForm
                 MainStackPanel.Children.Add(inputTech11.Result());
 
                 but.Width = 100;
-                but.Height = 100;
+                but.Height = 50;
                 but.Content = "Обновить";
-
+                but.Margin = new Thickness(5);
                 but.Click += But_ClickBook;
                 MainStackPanel.Children.Add(but);
             }

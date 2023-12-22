@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows;
+using System.Drawing;
+using System.Windows.Media;
 
 namespace Kurs22semestr.Classes.InsertData
 {
@@ -24,7 +26,7 @@ namespace Kurs22semestr.Classes.InsertData
         {
             name.Text = n;
             name.Width = 150;
-            name.Height = 100;
+            name.Height = 50;
             name.FontSize = 18;
             name.TextWrapping = TextWrapping.Wrap;
             input.Margin = new Thickness(10, 0, 10, 0);
@@ -32,7 +34,7 @@ namespace Kurs22semestr.Classes.InsertData
         public override void SettingInput()
         {
             input.Width = 100;
-            input.Height = 100;
+            input.Height = 50;
             input.FontSize = 18;
             input.TextWrapping = TextWrapping.Wrap;
             input.Margin = new Thickness(5,0,5,0);
@@ -41,7 +43,7 @@ namespace Kurs22semestr.Classes.InsertData
         {
             input.Text = n;
             input.Width = 100;
-            input.Height = 100;
+            input.Height = 50;
             input.FontSize = 18;
             input.TextWrapping = TextWrapping.Wrap;
             input.Margin = new Thickness(5, 0, 5, 0);
@@ -50,6 +52,7 @@ namespace Kurs22semestr.Classes.InsertData
         public override void SettingStack()
         {
             input.Width = 600;
+            mainContainer.Background = Brushes.White;
             //---------------------------------
             mainContainer.Orientation = Orientation.Horizontal;
             mainContainer.Margin = new Thickness(5);

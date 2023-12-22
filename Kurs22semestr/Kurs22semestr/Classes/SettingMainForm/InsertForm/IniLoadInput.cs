@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Markup;
 
 namespace Kurs22semestr.Classes.SettingMainForm.InsertForm
 {
@@ -25,6 +26,7 @@ namespace Kurs22semestr.Classes.SettingMainForm.InsertForm
         //------------------
         protected BlockInput inputTech10;
         protected BlockInput inputTech11;
+        protected Button but;
 
         public IniLoadInput() {
             inputTech1 = new BlockInput();
@@ -38,6 +40,7 @@ namespace Kurs22semestr.Classes.SettingMainForm.InsertForm
             inputTech9 = new BlockInput();
             inputTech10 = new BlockInput();
             inputTech11 = new BlockInput();
+            but = new Button();
         }
 
         public void LoadInputTech(StackPanel MainStackPanel)
@@ -98,11 +101,11 @@ namespace Kurs22semestr.Classes.SettingMainForm.InsertForm
             inputTech11.SettingStack();
             MainStackPanel.Children.Add(inputTech11.Result());
 
-            Button but = new Button();
             but.Width = 100;
-            but.Height = 100;
+            but.Height = 50;
+            but.Margin = new Thickness(5);
             but.Content = "Записать";
-
+            
             but.Click += But_ClickTech;
             MainStackPanel.Children.Add(but);
         }
@@ -164,9 +167,10 @@ namespace Kurs22semestr.Classes.SettingMainForm.InsertForm
             MainStackPanel.Children.Add(inputTech11.Result());
 
 
-            Button but = new Button();
+            
             but.Width = 100;
-            but.Height = 100;
+            but.Height = 50;
+            but.Margin = new Thickness(5);
             but.Content = "Записать";
 
             but.Click += But_ClickBook;
